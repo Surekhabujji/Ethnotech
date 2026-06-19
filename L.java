@@ -1,5 +1,5 @@
 import java.util.LinkedList;
-import java.util.List;
+//import java.util.List;
 public class L{
     public static void main(String[] args){
         LinkedList<String> li=new LinkedList<>();
