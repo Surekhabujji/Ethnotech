@@ -29,7 +29,7 @@ class ExampleCollection {
         TreeSet<Integer> ts=new TreeSet<>();
         for(Integer v:hs){
             ts.add(v);
-            
+
         }
         System.out.println("Tree Set: " + ts);
         System.out.println("First element in Set: " + ts.first());

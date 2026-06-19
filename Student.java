@@ -1,48 +1,37 @@
-class Student
-{
-int rollno;
-String name;
-static String college="SSI";
-static void change()
-{
-college="MITS";
-}
-Student(int r,String n)
-{
-rollno=r;
-name=n;
-}
-void display()
-{
-System.out.println(rollno+" "+name+" "+college);
-}
-public static void main(String[] args){
-Student.change();
-Student s1=new Student(15,"Surekha");
-Student s2=new Student(29,"Cherry");
-s1.display();
-s2.display();
-}
-}
+package Collections;
 
+import java.util.*;
 
-BEFOR MAIN STATIC BLOCK WILL EXECUTE
+public class Student {
+    public static void main(String[] args) {
 
+        LinkedHashSet<String> registered = new LinkedHashSet<>();
 
-FINAL KEYWORD EX
------------------->
+        registered.add("Surekha");
+        registered.add("Cherry");
+        registered.add("Chinni");
+        registered.add("Vijay");
+        registered.add("Surekha"); 
 
-class Bike
-{
-final int speed=90;
-void run()
-{
-speed=400;
-System.out.println("Speed Limit: "+ speed);
-}
-public static void main(String args[])
-{
-Bike b=new Bike();
-b.run();
-}
+        Queue<String> newS = new LinkedList<>();
+
+        newS.add("Ram");
+        newS.add("Kiran");
+        newS.add("Surekha");
+
+        System.out.println("Registered Students:");
+
+        for(String s : registered) {
+            System.out.println(s);
+        }
+
+        System.out.println("Unregistered Students:");
+
+        for(String s : newS) {
+
+            if(!registered.contains(s)) {
+                System.out.println(s);
+            }
+        }
+    }
 }
