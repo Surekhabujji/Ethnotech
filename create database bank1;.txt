@@ -1,0 +1,31 @@
+create database bank1;
+use bank1;
+create table customer1(cus_id int primary key,nmae varchar(30),city varchar(30));
+create table trans1(t_id int primary key,cus_id int,amount decimal,t_date date,t_type varchar(30),foreign key(cus_id) 
+references customer1(cus_id));
+insert into customer1 values(1,'surekha','bnglr'),
+(2,'cherry','kdp'),
+(3,'siri','vmpl'),
+(4,'sai','hyd');
+INSERT INTO trans1 VALUES
+(10,1,5000,'2025-06-01','Credit'),
+(20,1,2000,'2025-06-01','Debit'),
+(30,2,7000,'2025-06-02','Credit'),
+(40,3,1500,'2025-06-02','Debit'),
+(50,1,5000,'2025-06-03','Credit'),
+(60,2,7000,'2025-06-03','Credit');
+ select * from trans1 where amount > 3000; 
+ select avg(trans_count) as avg_trans from (select count(*) as trans_count from trans1 group by t_date) t;
+ select t_date,
+       count(*) AS transactions_per_day
+from trans1
+group by t_date;
+
+select sum(amount) as t_amount from trans1;
+
+
+ SELECT amount,
+       COUNT(*) AS frequency
+FROM trans1
+GROUP BY amount
+HAVING COUNT(*) > 1;
