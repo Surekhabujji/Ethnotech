@@ -1,0 +1,60 @@
+create database studentDB;
+use studentDB;
+create table Stu(roll int,name varchar(20),marks int);
+insert into stu values(1,'surekha',90),
+(2,'charan',89),
+(3,'cherry',85),
+(4,'rekha',80);
+select * from stu;
+
+create database employeeDB;
+use employeeDB;
+create table employee(
+    emp_id int,
+    emp_name varchar(30),
+    department varchar(20),
+    salary int
+);
+
+insert into employee
+values
+(102,'Priya','HR',45000),
+(103,'Kiran','IT',60000),
+(104,'Anu','Sales',40000),
+(105,'surekha','IT',50000);
+
+update employee
+set salary = 55000
+where emp_name='surekha';
+
+
+update employee
+set department='Admin',
+    salary=48000
+WHERE emp_id=102;
+
+select * from employee;
+
+delete from employee
+where emp_id = 102
+limit 1;
+
+select * from employee;
+delete from employee
+where emp_id = 103
+limit 1;
+delete from employee
+where emp_id = 104
+limit 1;
+
+select * from employee;
+
+select emp_name,salary from employee;
+
+select emp_name from employee where salary > 50000;
+update employee
+set salary=70000
+where emp_id=102;
+commit;
+
+select * from employee;
