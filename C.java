@@ -1,25 +1,11 @@
-import java.util.*;
-class C{
-public static void main(String[] args){
-String name;
-int id;
-int t,e,m,s,ss;
-Scanner sc=new Scanner(System.in);
-System.out.println("Enter all values");
-name=sc.nextLine();
-id=sc.nextInt();
-t=sc.nextInt();
-e=sc.nextInt();
-m=sc.nextInt();
-s=sc.nextInt();
-ss=sc.nextInt();
-int totalmarks=t+e+m+s+ss;
-int avg=totalmarks/5;
-System.out.println("total:"+totalmarks);
-System.out.println("avg:"+avg);
+public class C {
+    public static void main(String[] args) throws Exception {
+        for (int i = 0; i < 50; i++) {
+            ClassLoader loader = new URLClassLoader(new java.net.URL[]
+{new java.io.File(".").toURI().toURL()});
+            Class<?> clazz = loader.loadClass("java.lang.String");            
+        }
+    }
 }
-}
-
-
 
 
